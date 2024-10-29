@@ -1,0 +1,81 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Political Candidates</title>
+            <style>
+                /* Reset margin and padding */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+        
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 100vh;
+                }
+        
+                h1 {
+                    text-align: center;
+                    padding: 20px;
+                    background-color: #007bff;
+                    color: white;
+                    font-size: 2rem;
+                }
+        
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    list-style: none;
+                    padding: 0;
+                    margin: 20px;
+                }
+        
+                li {
+                    background-color: white;
+                    margin: 10px 0;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    font-size: 1.2rem;
+                }
+        
+                a {
+                    text-decoration: none;
+                    color: #007bff;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+        
+                a:hover {
+                    color: #0056b3;
+                }
+            </style>
+        </head>
+        <body>
+        
+            <h1>Political Candidates</h1>
+        
+            <ul>
+              {% for candidate in candidates %}
+                <li>
+                  <a href="{% url 'candidates:candidate_detail' candidate.id %}">
+                    {{ candidate.first_name }} {{ candidate.last_name }}
+                  </a> - {{ candidate.party }}
+                </li>
+              {% endfor %}
+            </ul>
+        
+        </body>
+        </html>
+         </a>
+      - {{ candidate.party }}
+</ul>
+

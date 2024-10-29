@@ -1,0 +1,14 @@
+<h1>Register New User</h1>
+<form action="{% url 'user_auth:register_user' %}" method="post">
+    {% csrf_token %}
+    <label>First Name:</label>
+    <input type="text" name="first_name" required><br><br>
+
+    <label>Username:</label>
+    <input type="text" name="username" required><br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" required><br><br>
+
+    <input type="submit" value="Register">
+</form>

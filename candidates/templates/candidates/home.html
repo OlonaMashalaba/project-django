@@ -1,0 +1,109 @@
+<h1>Welcome to the Political Campaign Website</h1>
+<a href="{% url 'candidates:candidate_list' %}">View All Candidates</a>
+
+<!-- templates/candidates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Political Candidates in South Africa</title>
+  <style>
+    body {
+      background-color: #e8f4f8;
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background-color: white;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🗳️ Meet the Political Comrades of South Africa </h1>
+  <ul>
+    {% for candidate in candidates %}
+      <li>
+        <a href="{% url 'candidates:candidate_detail' candidate.id %}">
+          {{ candidate.first_name }} "{{ candidate.nickname }}" {{ candidate.last_name }}
+        </a>
+        - {{ candidate.party }}
+      </li>
+    {% empty %}
+      
+    {% endfor %}
+  </ul>
+</body>
+</html>
+
+
+
+
+
+<!-- About Section -->
+<section id="about" style="padding: 50px; background-color: #f2f2f2;">
+    <h2>About Us</h2>
+    <p>The Spirit of South African Comrades 🤝
+    South African comrades represent the heart and soul of unity, resilience, and progress ✊. 
+    Rooted in a deep tradition of community engagement and a shared vision for a brighter future 🌄.
+    These comrades embody the values of solidarity, equality, and freedom. Champions of Change 🌍⚖️
+    Through their tireless efforts, South African comrades have been pioneers in fighting for justice and equality, inspiring generations to stand up against injustice and push for meaningful change 💪. Their commitment to uplifting communities resonates from the urban streets of Johannesburg 🏙️ to the rural landscapes of Limpopo 🌳.
+    
+    Bridge Builders Across Communities 🛤️🤝
+    The comrades work to unify people across cultural, racial, and social divides, celebrating South Africa's diversity 🥳 while fostering a sense of common purpose. Their efforts create bridges between past struggles and future opportunities, ensuring that the ideals of democracy and social progress endure 🗳️🚀.
+    
+    Inspiration and Leadership 🌠🎓
+    Whether standing on the front lines of activism 🪧 or providing mentorship and leadership within their communities 👨‍🏫👩‍🏫, these comrades embody the spirit of ubuntu – "I am because we are" 🤗. Their work reflects the shared belief that when one rises, we all rise together 🌊✨.
+    
+    A Beacon of Hope 🌅❤️
+    From the fight against apartheid to ongoing efforts for economic and social transformation 🔄, the South African comrades remain a beacon of hope for a better tomorrow 🌟. Their unwavering dedication to justice and community upliftment continues to inspire both South Africans and people around the world 🌍. Together, they remind us that change is possible when we work side by side with compassion and courage 💛🖤💚. 
+</p>
+</section>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section id="contact" style="padding: 50px; background-color: #f2f2f2; text-align: center;">
+    <h2 style="margin-bottom: 20px;">📞 Contact Us</h2>
+    <p style="margin-bottom: 30px;">Reach out to us on any of the platforms below.</p>
+
+    <!-- Social Media Links -->
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <a href=" https://www.linkedin.com/in/olona-mashalaba-344694197/" target="_blank" 
+           style="color: #0a66c2; font-size: 2rem;">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="mailto:olona.mashalaba@gmail.com" style="color: #BB001B; font-size: 2rem;">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href=" https://x.com/ShakesOlz" target="_blank" 
+           style="color: #1DA1F2; font-size: 2rem;">
+            <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="https://www.instagram.com/olo.428/" target="_blank" 
+           style="color: #C13584; font-size: 2rem;">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+</section>
+
+
