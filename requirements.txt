@@ -1,0 +1,6 @@
+
+Django==5.1.1             # Django framework
+Sphinx>=6,<9              # Sphinx for documentation generation
+sphinx-rtd-theme==3.0.1   # ReadTheDocs theme for Sphinx
+sqlparse==0.5.1           # SQL parsing library, often required by Django
+tzdata==2024.1            # Timezone data for Django
